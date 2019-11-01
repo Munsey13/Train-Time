@@ -7,31 +7,31 @@ var firebaseConfig = {
     messagingSenderId: "703956088604",
     appId: "1:703956088604:web:e520d827050971b8d22cd9"
     };    
-
+console.log("hello world");
     firebase.initializeApp(firebaseConfig);
 
     let database = firebase.database();
     
     //variable holders for user input
-    var name = "";
-    var destination = "";
-    var frequency = 0;
-    var firstTrainTime = "";
+    let name = "";
+    let destination = "";
+    let frequency = 0;
+    let firstTrainTime = "";
 
    //eventHandler
     $("#train-submit").on("click", function(event) {
         event.preventDefault();
 
-        name = $("#trainName").val().trim();
+        name = $("#nameTrain").val().trim();
         destination = $("#whereTo").val().trim();
         frequency = $("#timeFreak").val().trim();
         firstTrainTime = $("#military").val().trim();
 
         database.ref().push({
-            name: name,
-            destination: destination,
-            frequency: frequency,
-            firstTrainTime: firstTrainTime,
+            name: nameT,
+            destination: destinationT,
+            frequency: frequencyT,
+            firstTrainTime: firstTrainTimeT,
             dataAdded: firebase.database.ServerValue.TIMESTAMP
 
 
@@ -39,4 +39,4 @@ var firebaseConfig = {
 
     });
 
-    
+    console.log("hello world");
